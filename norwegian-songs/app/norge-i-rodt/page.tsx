@@ -1,4 +1,5 @@
 import "../styles.css";
+import Link from "next/link";
 
 export default function NorgeIRodt() {
   return (
@@ -82,6 +83,12 @@ export default function NorgeIRodt() {
           Du er vårt, du er vårt, gamle Norge! <br />
           Vi vil kle deg i rødt, hvitt og blått!
         </p>
+      </div>
+
+      <div className="song-navigation">
+        <Link href="/ja-vi-elsker" className="next-song">
+          Neste sang: Ja, vi elsker →
+        </Link>
       </div>
 
       <a href="/" className="back-button">

@@ -1,4 +1,5 @@
 import "../styles.css";
+import Link from "next/link";
 
 export default function JaViElsker() {
   return (
@@ -52,6 +53,12 @@ export default function JaViElsker() {
           /: Også vi når det blir krevet
           <br /> For dets fred slår leir :/
         </p>
+      </div>
+
+      <div className="song-navigation">
+        <Link href="/norge-i-rodt" className="next-song">
+          Neste sang: Norge i rødt, hvitt og blått →
+        </Link>
       </div>
 
       <a href="/" className="back-button">

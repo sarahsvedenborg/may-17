@@ -44,16 +44,16 @@ html {
   text-decoration: none;
   color: inherit;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 12px;
   background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 12px 24px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .song-card:active {
-  transform: scale(0.95);
+  transform: scale(0.98);
 }
 
 .song-card::after {
@@ -76,21 +76,58 @@ html {
   opacity: 1;
 }
 
+.song-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.song-card-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(
+    135deg,
+    rgba(239, 43, 45, 0.1),
+    rgba(0, 40, 104, 0.1)
+  );
+  transform: translate(30%, -30%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.song-description {
+  color: #555;
+  line-height: 1.6;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
 .song-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
+  background: linear-gradient(
+    45deg,
+    var(--norwegian-red),
+    var(--norwegian-blue)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .song-subtitle {
-  color: #666;
+  color: #444;
   margin: 0.5rem 0;
+  font-weight: 500;
 }
 
 .song-link-text {
-  color: #777;
-  font-size: 0.875rem;
+  color: var(--norwegian-blue);
+  font-size: 0.95rem;
   margin-top: 1rem;
+  font-weight: 500;
 }
 
 .attribution {
@@ -159,10 +196,78 @@ html {
     background: #262626;
     color: #fff;
   }
+
+  .song-card {
+    background: #262626;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .header-subtitle {
+    color: #bbb;
+  }
+
+  .song-description {
+    color: #aaa;
+  }
+
+  .song-subtitle {
+    color: #ddd;
+  }
+
+  .song-link-text {
+    color: #fff;
+  }
+
+  .song-card-flag {
+    background: linear-gradient(
+      135deg,
+      rgba(239, 43, 45, 0.15),
+      rgba(255, 255, 255, 0.15)
+    );
+  }
 }
 
 .lyrics br {
   display: block;
   content: "";
   margin-top: 0.5rem;
+}
+
+.song-navigation {
+  margin-bottom: 80px;
+  padding: 0 0.5rem;
+}
+
+.next-song {
+  display: block;
+  text-align: right;
+  color: var(--norwegian-blue);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .next-song {
+    background: #262626;
+    color: #fff;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+}
+
+.header-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 1rem;
+  font-weight: 400;
 }
