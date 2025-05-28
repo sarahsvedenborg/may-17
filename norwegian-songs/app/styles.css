@@ -1,0 +1,135 @@
+:root {
+  --norwegian-red: #ef2b2d;
+  --norwegian-blue: #002868;
+}
+
+body {
+  background: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(
+    to right,
+    var(--norwegian-red),
+    var(--norwegian-blue)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.song-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.song-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.song-card:active {
+  transform: scale(0.95);
+}
+
+.song-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(239, 43, 45, 0.05),
+    rgba(0, 40, 104, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.song-card:hover::after {
+  opacity: 1;
+}
+
+.song-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.song-subtitle {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.song-link-text {
+  color: #777;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.attribution {
+  border-left: 4px solid var(--norwegian-red);
+  padding-left: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.lyrics {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.lyrics p {
+  margin-bottom: 1.5rem;
+}
+
+.back-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  background: linear-gradient(
+    45deg,
+    var(--norwegian-red),
+    var(--norwegian-blue)
+  );
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.2s ease-in-out;
+}
+
+.back-button:active {
+  transform: scale(0.95);
+}
